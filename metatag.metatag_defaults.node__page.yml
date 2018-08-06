@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+id: node__page
+label: 'Basic page'
+tags:
+  description: Basic page description
+  keywords: Basic page keyword
+  referrer: no-referrer
+  title: [current-page:title] | BASIC PAGE

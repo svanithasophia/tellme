@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+id: node__article
+label: 'Article'
+tags:
+  description: Article description
+  keywords: Article keyword
+  referrer: no-referrer
+  title: [current-page:title] | ARTICLE
