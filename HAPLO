@@ -1,0 +1,239 @@
+HAPLO
+- removed the left box in search resources,search events,in-depth reports, documents page
+- Export issue in search corporate documents - fixed
+- configurations for Postal & Contact addresses for search events, in-depth reports,
+search resources,search corporate documents - Fixed
+
+
+WORK PENDING:
+1) INCLUDE URL ITEMS - DONE
+2) HOME LINK WITH BREADCRUMB CHANGE -DONE
+3) ADD LINK -DONE
+4) RECENT LINK - DONE
+5) MENU LINKS -DONE
+6) SOCIAL ICONS
+7) REMOVE LEFT SIDE BAR IN DETAIL PAGE -DONE
+
+BUGS:
+- Search corporate documents shows export button when the result is empty
+- Reset button to be worked when clicked
+- Search within to be added as button - DONE
+- No filters added for Corporate by laws, ethics, guidelines
+- Search resource - export & results issue
+
+DETAIL PAGE
+- Width of the detail page to be increased - DONE
+- Breadcrumbs to appear for detail page - DONE, WE HAVE MADE COMPANIES AS LANDING PAGE FOR NOW
+- left box to be removed - DONE
+
+RECENT:
+- Images to be added for its content types
+- Popup
+- Add block to show ADD & Recent
+- Recent not working
+
+HAPLO PENDING:
+- check left bar for all users - COMPLETED
+- haplo permissions - COMPLETED
+a) export
+b) add & recnt
+c) contents
+
+- results will null no export should be displayed - COMPLETED
+- date & title sorting
+
+
+F - NASDAQ
+
+I - NYSE
+
+J - NYSE MKT
+
+G - NASDAQ (GM)
+
+H - NASDAQ (GS)
+
+K - OTC
+
+L - Other OTC
+
+M - TSE
+
+E - LON
+
+
+548
+729
+803
+892
+
+
+2015 Health Net Code of Business Conduct and Ethics
+
+HAPLO PENDING:
+- check left bar for all users - COMPLETED
+- haplo permissions - COMPLETED
+a) export
+b) add & recnt
+c) contents
+
+- results will null no export should be displayed - COMPLETED
+- date & title sorting
+
+
+
+https://staging.complianceweek.com/list-companies
+https://staging.complianceweek.com/search-corporate-documents
+https://staging.complianceweek.com/corporate-bylaws
+https://staging.complianceweek.com/company-statement-ethics
+https://staging.complianceweek.com/corporate-governance-guidelines
+https://staging.complianceweek.com/search-events
+https://staging.complianceweek.com/search-in-depth-reports
+https://staging.complianceweek.com/search-resources-reports
+
+
+.view-search-in-depth-reports .views-field-field-topic{
+    float: right;
+    width: 25%;
+}
+
+export functionality changes:
+- company content type, remove ownership as required field
+- compliance document type, remove Document type & Company as required field
+- 
+
+
+Exporting steps:
+company/[node:title]
+compliance-document/[node:title]
+in-depth-reports/[node:title]
+compliance-resource/[node:title]
+week-event/[node:title]
+
+
+.view-companies .pagination, .view-recently-add-edit-content .pagination, .view-search-corporate-documents .pagination, .view-search-events .pagination, .view-search-in-depth-reports .pagination, .view-search-resources-reports .pagination {
+    width: auto;
+}
+
+.view-companies .pagination>li>a, .view-companies .pagination>li>span, .view-recently-add-edit-content .pagination>li>a, .view-recently-add-edit-content .pagination>li>span, .view-search-corporate-documents .pagination>li>a, .view-search-corporate-documents .pagination>li>span, .view-search-events .pagination>li>a, .view-search-events .pagination>li>span, .view-search-resources-reports .pagination>li>a, .view-search-resources-reports .pagination>li>span, .view-search-in-depth-reports .pagination>li>a, .view-search-in-depth-reports .pagination>li>span {
+    margin-right: 10px;
+    background-color: #00467f;
+    border-color: #00467f;
+    color: #fff;
+    width: auto;
+}
+
+.view-companies .pagination>li>span, .view-recently-add-edit-content .pagination>li>span, view-search-corporate-documents .pagination>li>span, .view-search-events .pagination>li>span, .view-search-resources-reports .pagination>li>span, .view-search-in-depth-reports .pagination>li>span {
+  background-color: #fff;
+    border: 0 none;
+    color: #00467f;
+}
+
+
+
+Warning:
+- Warning:Illegal offset type in cw_content_alerts_node_view() (line 177 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module)
+- Theme hook link not found.
+- Warning: call_user_func_array() expects parameter 1 to be a valid callback, no array or string given in theme_get_registry() (line 277 of /srv/web/cw.live/docroot/includes/theme.inc).
+
+Notice:
+- Notice: Undefined index: field in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined offset: 1 in cw_content_alerts_node_view() (line 173 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: taxonomy_term_reference_link in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Object of class stdClass could not be converted to int in cw_content_alerts_node_view() (line 171 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: blog_post in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: node in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: und in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: homepage in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: hidden in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: Topic in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+
+
+- Notice: Undefined index: custom in complianceweek_preprocess_breadcrumb() (line 348 of /srv/web/cw.live/docroot/sites/all/themes/complianceweek/template.php).
+- Notice: Undefined property: ParagraphsItemEntity::$field_general_body in include() (line 29 of /srv/web/cw.live/docroot/sites/all/themes/complianceweek/ds_layouts/search_teaser/search-teaser--node-landing-page.tpl.php).
+- Notice: Trying to get property of non-object in cw_haplo_node_access() (line 382 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_haplo/cw_haplo.module).
+
+
+- Notice: Undefined index: und in include() (line 17 of /srv/web/staging.complianceweek.com/docroot/sites/all/themes/complianceweek/templates/system/node--company.tpl.php).
+- Notice: Trying to get property of non-object in cw_content_alerts_node_insert() (line 33 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined property: stdClass::$field_content_type in cw_content_alerts_node_insert() (line 32 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Warning: implode(): Invalid arguments passed in cw_content_alerts_node_insert() (line 26 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined variable: name in cw_content_alerts_node_insert() (line 26 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Warning: Invalid argument supplied for foreach() in cw_content_alerts_node_insert() (line 18 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined property: stdClass::$field_topic in cw_content_alerts_node_insert() (line 16 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: custom in cw_haplo_menu_get_item_alter() (line 339 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_haplo/cw_haplo.module).
+- Notice: Undefined index: custom in cw_haplo_menu_get_item_alter() (line 339 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_haplo/cw_haplo.module).
+
+
+- Notice: Undefined index: und in include() (line 17 of /srv/web/staging.complianceweek.com/docroot/sites/all/themes/complianceweek/templates/system/node--company.tpl.php).
+- Notice: Trying to get property of non-object in cw_content_alerts_node_insert() (line 33 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+
+- Warning:Illegal offset type in cw_content_alerts_node_view() (line 177 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module)
+- Notice: Undefined index: field in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined offset: 1 in cw_content_alerts_node_view() (line 173 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: taxonomy_term_reference_link in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Object of class stdClass could not be converted to int in cw_content_alerts_node_view() (line 171 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: blog_post in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: node in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: und in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: homepage in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: hidden in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: Topic in cw_content_alerts_node_view() (line 172 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+- Notice: Undefined index: custom in complianceweek_preprocess_breadcrumb() (line 348 of /srv/web/cw.live/docroot/sites/all/themes/complianceweek/template.php).
+- Notice: Undefined index: custom in cw_haplo_menu_get_item_alter() (line 339 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_haplo/cw_haplo.module).
+- Notice: Undefined property: stdClass::$metatags in _cw_article_get_term_meta_info() (line 272 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/features/cw_article/cw_article.module).
+- Notice: Undefined variable: entity_type in cw_buy_button_pay4subscription() (line 413 of sites/all/modules/features/cw_buy_button/cw_buy_button.module).
+
+
+- Notice: Undefined variable: newsletter_help_text in include() (line 142 of /srv/web/staging.complianceweek.com/docroot/sites/all/themes/complianceweek/ds_layouts/user_profile/user-profile-form.tpl.php).
+- Notice: Trying to get property of non-object in complianceweek_menu_link() (line 817 of /srv/web/staging.complianceweek.com/docroot/sites/all/themes/complianceweek/template.php).
+- Notice: Undefined offset: 0 in complianceweek_menu_link() (line 817 of /srv/web/staging.complianceweek.com/docroot/sites/all/themes/complianceweek/template.php).
+
+
+
+I have investigated on Video which was not playing in the Recently Added Link with following observations:
+https://www.complianceweek.com/thought-leadership/videos/compliance-week-tv
+
+a) https://www.complianceweek.com/thought-leadership/videos/recently-added/coffin-on-compliance-romanias-pushback-against-corruption#.WwV0i2997IU - which doesnt show any videos or node
+The same link in Staging:
+https://staging.complianceweek.com/thought-leadership/videos/recently-added/coffin-on-compliance-romanias-pushback-against-corruption - shows the videos & node
+
+b) The node in Production doesn't exists.
+c) 
+
+ 
+ - Notice: Undefined index: field_topic in cw_content_alerts_node_view() (line 171 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module).
+ - Notice: Undefined index: #title in drupal_pre_render_link() (line 5768 of /srv/web/cw.live/docroot/includes/common.inc).
+ - Notice: Undefined index: safe_value in cw_system_node_view() (line 48 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_system/cw_system.fields.inc).
+
+
+ - Notice: Undefined index: custom in complianceweek_preprocess_breadcrumb() (line 348 of /srv/web/cw.live/docroot/sites/all/themes/complianceweek/template.php).
+Fixed
+
+- Notice: Undefined offset: 1 in FacetapiAdapter->processActiveItems() (line 312 of /srv/web/cw.live/docroot/sites/all/modules/contrib/facetapi/plugins/facetapi/adapter.inc).
+Patch
+https://www.drupal.org/project/facetapi/issues/2378693
+
+- Notice: Undefined index: override_type in cw_registration_form_alter() (line 493 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/features/cw_registration/cw_registration.module). - Fixed
+
+- Notice: Trying to get property of non-object in cw_haplo_node_access() (line 403 of /srv/web/cw.live/docroot/sites/all/modules/custom/cw_haplo/cw_haplo.module).
+
+- Notice: Undefined index: field_topic in cw_content_alerts_node_view() (line 172 of /srv/web/staging.complianceweek.com/docroot/sites/all/modules/custom/cw_content_alerts/cw_content_alerts.module). - Fixed
+
+- Notice: Trying to get property of non-object in cw_content_lead_generation_form_alter() (line 164 of /srv/web/cw.live/docroot/sites/all/modules/features/cw_content_lead_generation/cw_content_lead_generation.module).
+
+
+Mailchimp:
+https://mandrillapp.com/api/docs/templates.html#method=info
+https://mandrillapp.com/login/?referrer=%2Fsplit-test
+https://www.drupal.org/project/mandrill/issues/1721562
+https://mandrill.zendesk.com/hc/en-us/articles/205582497-Using-Editable-Content-Areas-in-Templates
+https://www.quora.com/Is-there-an-easy-way-to-send-one-email-using-MailChimp
+https://wildwildweb.es/en/blog/mandrill-send-transactional-emails-drupal
+https://mandrillapp.com/tags
+https://www.lullabot.com/articles/module-monday-mandrill
+https://www.drupal.org/node/1870804
+
+
+
+

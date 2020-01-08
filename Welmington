@@ -1,0 +1,175 @@
+Welmington
+1000193177
+
+- http://complianceweek.com/
+
+Status call:
+89011442034439814#
+id: 78874223
+id : 28724131
+id : 11600660
+
+https://meet.lync.com/wilmington109-wilmingtonplc/shelley.davis/PDVCMV2F
+
+Staging details:
+staging
+goLf83
+goLf83!socks 
+
+CW gmail id:
+vanithacw@gmail.com
+vanithas@123
+
+Brain
+890 11 44 20 75492590
+
+Run command to access share folders
+\\PC222345
+
+
+Git hub:
+https://github.com/WilmingtonGroup
+username: vanithacog
+password: vanithas@123
+
+Uname : tech@cognizant.com
+Password : htwGfRqDp81i
+
+
+Jira
+http://wpi-jira.central.wilmington.co.uk/browse/WDAOS-1568
+username: vanitha.sophia@cognizant.com
+password: vanithas
+
+Development
+username : vanitha.sophia@cognizant.com
+password: Cognizant2017
+
+Dev server username n password & production:
+vanitha.sophia@cognizant.com
+Cognizant2017
+
+
+Username: renjith
+Password: f6H9Kle42Mn 
+
+Rijas
+https://cognizantcorp.webex.com/meet/rijas.madurakuzhi
+
+
+
+
+adding ssh to git bash
+https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+- ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+(email address should be github registered address)
+- Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]
+Anw: compweek
+- eval $(ssh-agent -s)
+Answ: Agent pid 15900
+- ssh-add ~/compweek
+Create .gitconfig file with these and password should have special characters(/c/Users/you/)
+[http]
+proxy = "http://552898:vani_Is123@proxy.cognizant.com:6050"
+sslVerify = false
+
+[https]
+proxy = "http://552898:vani_Is123@proxy.cognizant.com:6050"
+sslVerify = false
+
+
+Accessing compliance week in git bash:
+dev : ssh staging.complianceweek.com@5.148.133.153
+qa : ssh staging.complianceweek.com@5.148.133.154
+stage : ssh staging.complianceweek.com@81.29.81.36
+ls
+cd docroot
+
+
+
+
+Cloning using git:
+- git clone https://github.com/WilmingtonGroup/ComplianceWeek.git
+
+Create the branch and dont push to master branch:
+-  git checkout -b compdev_branch
+-  git push origin compdev_branch
+
+Branch will be seen in github.com
+Push from local server to branch and not to dev(master)
+
+git config --global credential.helper wincred
+https://help.github.com/articles/caching-your-github-password-in-git/
+
+Entering your username
+git config --global user.name "Vanitha Sophia"
+
+entering your email
+git config --global user.email vanitha.sophia@cognizant.com
+
+git status(red)
+git add --all
+git status(green)
+git commit -m "hjg"
+git push origin compdev_branch
+
+find the error log
+ tail -f staging.compliance.week.com
+
+
+Step 1: Get a clone of GIT repository to local machine
+git clone <download link from GITHUB>
+
+Step 2: Create a branch in local machine
+git checkout -b <branch name>
+
+Step 3: Push the code to GIT
+git push origin <branch name>
+
+Step 4: SSH the server and create the branch
+git fetch && git checkout <branch name>
+
+
+https://github.com/WilmingtonGroup/ComplianceWeek/wiki/Whitepaper-Resources
+
+https://prelive.complianceweek.com/
+
+
+
+We had a big deployment onto CW live this morning. You need to make sure you merge in your master branch. It’d be helpful if you rebased your current branch
+ 
+$ git checkout master
+$ get pull origin master
+$ git checkout feature/haplo
+$ git rebase master
+ 
+https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+
+Salesforce
+https://wilmington--deeson.cs70.my.salesforce.com
+Username: renjith.k.r@cognizant.com
+password: renjith@123
+
+https://github.com/WilmingtonGroup/ComplianceWeek/blob/feature/WDAOS-1814-renewals/docroot/sites/all/modules/custom/cw_salesforce/cw_salesforce.mappings.inc#L78 
+https://github.com/WilmingtonGroup/ComplianceWeek/blob/feature/WDAOS-1814-renewals/docroot/sites/all/modules/custom/cw_salesforce/cw_salesforce.module#L434
+
+Use merge instead of rebase:
+git checkout master
+git pull origin master
+git checkout <yourbranch>
+git merge --no-ff master
+
+
+https://mandrillapp.com/login/?referrer=%2F
+tlyster@complianceweek.com 
+M@1LCh1mp
+
+
+
+
+
+
+
+
+
+

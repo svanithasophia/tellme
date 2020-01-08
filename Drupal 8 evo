@@ -1,0 +1,77 @@
+Drupal 8 evo
+- installing composer
+
+Important links for twig
+TWIG CODING STANDARDS: https://www.drupal.org/node/1823416
+Create custom twig templates for custom module: https://www.drupal.org/node/2640110
+Debugging compiled Twig templates: https://www.drupal.org/node/1903374
+Twig Template naming conventions: https://www.drupal.org/node/2354645
+DRUPAL 8 THEMING: https://www.drupal.org/docs/8/theming
+Include default configuration in your Drupal 8 module: https://www.drupal.org/docs/8/creating-custom-modules/include-default-configuration-in-your-drupal-8-module
+Getting Raw values: https://medium.com/@sarahcodes/templating-custom-post-types-in-drupal-8-bfc418bbae5a
+TWIG values Fetch: https://blog.usejournal.com/getting-drupal-8-field-values-in-twig-22b80cb609bd
+Using attributes in templates: https://www.drupal.org/docs/8/theming-drupal-8/using-attributes-in-templates
+
+TWIG DOCUMENTATION:
+https://twig.symfony.com/doc/2.x/
+
+Git details:
+Cloning: git clone https://github.com/WilmingtonGroup/evo8.git
+EVO design: https://github.com/WilmingtonGroup/EvoDesign 
+
+Development details:
+ssh dev-evo8.hsj.co.uk@cogqa
+dev-evo8.hsj.co.uk
+ssh cognizant@cogqa
+
+file:///C:/xampp/htdocs/evo8/docroot/themes/custom/evo8_base_theme/source/index.html
+https://ftp.drupal.org/files/projects/
+
+evo 8 admin details:
+User: evoadmin
+Pass: TB37V6XL9y
+
+Drush commands
+clear cache: /c/xampp/htdocs/evo8/vendor/bin/drush cr
+Disable module : /c/xampp/htdocs/evo8/vendor/bin/drush pmu devel
+drush cex - export configurations
+drush cim - import configurations
+
+composer:
+composer install
+composer update --with-dependencies
+
+Design Prototypes:
+https://projects.invisionapp.com/ 
+Rijas.Madurakuzhi@Wilmingtonplc.com
+Rija422300$
+
+
+Drupal configurations:
+Module: config pages
+created hero banner config with fields
+Generate content
+blocks
+config pages
+drush
+
+kint($variables['node']);
+checking for toArray() function
+
+Important links:
+https://befused.com/drupal/drupal-8-view-embed
+
+Featured box:
+There is no seperate content for Featured box, we have added a field in Responsive Grid 'Featured Content' while adding contents.
+
+
+
+
+
+
+
+
+
+
+
+

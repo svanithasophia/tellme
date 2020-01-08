@@ -1,0 +1,804 @@
+HSJI
+
+eval $(ssh-agent -s)
+ssh-add ~/welmington
+welming@123
+
+eval $(ssh-agent -s)
+ssh-add ~/compweek
+
+
+EVO ADMIN DETAILS:
+shelley.davis@wilmingtonplc.com
+93f7D32PHdGB
+
+EVO 8 ADMIN DETAILS:
+Staging site url : https://evo8.hsj.co.uk
+User: evoadmin
+Pass: TB37V6XL9y
+
+EVO vanilla site:
+brian.willows@wilmingtonplc.com 
+inbEVaC%IMeGS!ZDXA6cYq5$0AJXg2GVe46
+
+
+5.148.133.153 - cogdev
+5.148.133.154 - cogqa
+81.29.81.36   - stage for evo
+81.29.70.3    - stage for HSJI
+81.29.81.37   - production
+
+Imp notes:
+https://www.drupal.org/docs/7/creating-custom-modules/howtos/examples-for-database-update-scripts-using-hook_update_n-how 
+
+Dev urls:
+staging.hsjintelligence.co.uk 
+hsjiadmin / K$wFOA1nJBUZ1&q3
+
+staging.niceconference.org.uk 
+tech@cognizant.com / htwGfRqDp81i
+
+Access servers:
+(staging.niceconference.org.uk)
+ssh test.hsj@5.148.133.153
+
+(staging.hsjintelligence.co.uk)
+ssh staging.hsjintelligence.co.uk@5.148.133.153
+ssh staging.hsjintelligence.co.uk@cogqa
+
+EVO
+DEV URLS: ssh eventsone@5.148.133.153
+          ssh test.evo@5.148.133.153
+QA URLS:  ssh eventsone@5.148.133.154
+
+http://jsfiddle.net/racgkst8/
+
+
+http://wpi-jira.central.wilmington.co.uk/secure/RapidBoard.jspa?rapidView=16&selectedIssue=WDAOS-3204&sprint=883
+
+HSJI URLS: ssh staging.hsjintelligence.co.uk@cogqa
+
+Development URLS:
+https://staging.hsjintelligence.co.uk/
+https://staging.niceconference.org.uk
+https://staging-partnership.hsj.co.uk/payments-wizard?init=payments 
+
+QA urls:
+https://staging.hsjintelligence.co.uk/
+https://staging.niceconference.org.uk
+
+Production urls:
+https://value.hsj.co.uk
+https://partnership.hsj.co.uk/user/register-step-1
+
+
+JIRA
+https://wilmington.atlassian.net/secure/RapidBoard.jspa?rapidView=79&view=planning.nodetail&selectedIssue=HSJI-938
+
+GIT CLONE:
+git clone https://github.com/WilmingtonGroup/hsji.git
+git clone https://github.com/WilmingtonGroup/evo.git 
+https://github.com/WilmingtonGroup/hsji
+https://github.com/WilmingtonGroup/evo8.git
+
+https://staging-value.hsj.co.uk/
+https://staging-emergingleaders.hsj.co.uk/
+username:shelley.davis@wilmingtonplc.com
+password: 93f7D32PHdGB
+
+COGDEV
+https://cogqa-value.hsj.co.uk/
+https://cogqa-emergingleaders.hsj.co.uk/
+https://cogqa.hsjintelligence.co.uk/
+https://cogqa-regionalnetworks.hsj.co.uk/
+
+Update hooks
+7503 - Enable the feature module for image styles
+7504 - Awards - Resend emails is displayed with Strike off in entry creation page
+7505 - partnership.hsj - disable module social_login
+7506 - HSJI-1030 - Awards - Project Title
+
+
+PAYMENT URLS:
+1) Awards site:
+https://staging-value.hsj.co.uk/payments-wizard
+2) Conference-emerging site
+https://staging-emergingleaders.hsj.co.uk/payment/select-your-ticket
+
+EventsOne websites  - Dev environment
+-------------------------------------------------------------------------------------------------------------------------
+ssh eventsone@5.148.133.153                        - staging-value.hsj.co.uk (Awards site)
+ssh test.evo@5.148.133.153                         - staging-emergingleaders.hsj.co.uk (Conference site)
+
+ssh eventsone@5.148.133.154                    - staging-value.hsj.co.uk (Awards site)
+                                               - staging-emergingleaders.hsj.co.uk (Conference site)
+
+
+Set apache conf file
+ssh cognizant@5.148.133.153
+sudo su - go to root
+cd /etc/apache2/sites-available
+
+Database dump and restore
+drush sql-dump > ~/db_backup_emerging.sql 
+drush sql-drop
+drush sql-cli < ~/db_psc_2017-11-06.sql 
+ 
+
+Jquery msie issue
+1) removal of jquery 3.1 jquery from site template and investigate
+2) Add jquery migrate plugin and investigate the site
+3) Check for msie wherever its existing, and add in that particluar page
+
+
+
+
+EVO SITE INFORMATION
+1) Awards site:
+- https://staging-value.hsj.co.uk
+- Awards site used to issuing the awards to the enterants which will be judged by the judges (webform)
+- Awards uses paid and free category for this awards
+- Credit card details
+card - 4111111111111111
+cvv  - 123
+- Payment methods include credit cards, invoice($500)
+
+
+
+2) Conference-emerging site
+- https://staging-emergingleaders.hsj.co.uk
+- Events which is created in the site, delegates participate, they purchase the tickets
+- https://staging-emergingleaders.hsj.co.uk/payment/select-your-ticket
+
+
+drush @sites en masquerade -y
+
+
+HSJI TICKETS MODULE UPDATES:
+HSJI-862
+hotfix/HSJI-862-views-module
+1) Updated to new version 7.x-3.20
+2) Verfied in Available updates
+3) No database updates found for this version
+4) Views settings remained same when compared with Staging
+5) No Console & db log errors for views found
+6) The coupon link, admin/commerce/coupons/list which is using views, created the coupon for testing
+7) Added a field and checked for ajax errors
+8) same testing steps done in emerging site
+
+HSJI-863
+hotfix/HSJI-863-vbo-update
+1) Updated to new version 7.x-3.5
+2) Verifed in Available updates
+3) No Database updates found
+4) Verified Bulk operations field in Adminstration Nodes(content) view
+5) Verfied with content admin page, Eg: Unpublished group of nodes and selected operation for it, with batch the nodes was successfully unpublished without errors
+6) Same testing steps added for emerging site
+
+HSJI-910
+hotfix/HSJI-910-vbo
+1) Updated to new version 7.x-3.5
+2) Verifed in Available updates
+3) No Database updates found
+4) Verified Bulk operations field in Adminstration Nodes(content) view
+5) Verfied with content admin page, Eg: Unpublished group of nodes and selected operation for it, with batch the nodes was successfully unpublished without errors
+6) Verfied with People admin page using the Update options
+
+HSJI-872
+hotfix/HSJI-872-ctools
+1) Updated to new version 7.x-1.14
+2) Verified in Available updates
+3) Database updates found as follows:  
+Ctools  7003  Revert the length of the ctools_object_cache.name column back to 128.
+4) No console and db log errors for this new update
+5) Created contents for test purpose and checked for ajax errors
+6) Added tokens for Browse available options for account fields
+
+HSJI-872
+hotfix/HSJI-876-devel
+1) Verified in Available updates - 7.x-1.6
+2) Database updates found:
+ -Devel  7007  Delete 'devel_xhprof_' variables as they were removed from code.
+ -Devel  7008  Change variable "dev_timer" to "devel_timer".
+3) Verfied in Console & db log errors
+4) Settings remained same but XHPROF(disbaled before update) was removed because of the new update
+5) Devel is Developer helper module, checked for dpm & dprint_r functions in the code to verfiy
+
+HSJI-830
+hotfix/HSJI-830-globalredirect
+1) Verified in Available updates - 
+2) No database updates required for this version
+3) Checked for console or db log errors
+4) Configurations remained same
+5) New configuration is added for this new version - Redirect Comments to Node
+6) Tried to access node/866 got redirected to its alias - Emerging
+7) Tried to access node/1807 in Awards site, node was not redirected as global redirect was disabled.
+Note: Global redirect module is enabled only for emerging and disabled for Awards site 
+
+
+HSJI-877
+hotfix/HSJI-877-diff
+1) Verified in Available updates - 7.x-3.3
+2) Database updates found as follows:
+- Diff  7306  Sets the optional additional node properties to render so that the title  still shows by default when doing node comparisons.
+- Diff  7307  Grants access to the Diff "View Changes" button permission to all users.
+3) Checked for console or db log errors
+4) New configuration changes:
+- Diff default state is removed after the update in configurations
+- Property options is added and title is default enabled for nodes
+- Property options is added for users(no value selected by default)
+5) Added the content after diff update and edited the revsions to compare. Please find the attached for reference.
+
+
+HSJI-874
+hotfix/HSJI-874-customerror-update
+- Compared with existing versions for any custom modifications added found that customerroralt folder is added
+- Verfied in available updates
+- No database updates required for the new version
+- No console or db log errors
+- Site information error pages remained same with customerror/403 & customerror/404
+- Configuration message for 404 & 403 acces denied page remained same
+- Anyonmus users : When trying to access inavlid page(https://staging.hsjintelligence.co.uk/aboutus) is redirected to login page(functionality written customerroalt folder)
+- Logged in users : When trying to access invalid page(https://staging.hsjintelligence.co.uk/aboutus) is redirected to 404 page
+- Trying to access admin pages for non accessible users redirects to 403 page
+- Added test-content-diff-update123 test-content-diff-update in 404 Redirects, where test-content-diff-update123 page doesnt exists which redirects to test-content-diff-update, if redirects not included here takes to 404 page with message.
+
+HSJI-864
+hotfix/HSJI-864-views-field
+1) Compared with existing version for any customizations
+2) Verifed in available updates
+3) No database updates required for this version
+4) No console & db log errors found
+5) Added Global:View field for testing purpose which embedds the view
+Note: works only if the parent view exists
+6) No Global: View field found in any views in awards or emerging site
+
+
+HSJI-879
+hotfix/HSJI-879-elysia-cron
+1) Compared existing version for any customizations found that these files are added to existing version (Hence not altering these files when new version is added)
+elysia_cron_scheduler_old.inc
+elysia_cron_update.php
+elysia_drupalconv.php
+2) Verfied in available updates
+3) No database updates found for this version
+4) Compared the configurations with production, no new set of configurations added for this version
+5) Configurations data remained same.
+6) As per the ticket HSJI-685, modules is enabled as per swarnali comment, No update errors found
+7) Sanity check done after this upgrade after the cron run
+8) No console or db log errors
+
+HSJI-811
+hotfix/HSJI-811
+1) Compared the last versions of admin menu
+2) No database updates required
+3) Verified in the Available updates
+4) No errors or warnings recorded for admin menu
+5) Settings for admin menu remained same
+6) Developer modules to keep enabled is removed for this new version and hence it was in disbaled state as seen in staging and production
+7) No access issue found when navigating the admin menus
+
+
+HSJI-898
+hotfix/HSJI-898-pathauto
+1) Compared with last versions for any customizations
+2) Verified in Available updates
+3) Database updates found for this version:  
+Pathauto  7006  Create pathauto_state table, using data from pathauto_persist if it exists.
+4) URL patterns remained same
+5) Created a content which created automatic alias by default
+6) No Console or db log errors found
+
+
+HSJI-912
+hotfix/HSJI-912-weight
+1) Compared with existing versions of code for any customizations
+2) Verified in available updates
+3) Database updates required
+ Weight  7211  Make sure all content types have an entry in {weight_settings}.
+ Weight  7212  Remove unused id column from {weight_settings}.
+4) Error found after update
+SQLSTATE[42000]: Syntax error or access violation: 1173 This table type requires a primary key 
+
+HSJI-949
+1)Glossary
+2)Homepage notifications
+3)People Moves
+4)webform
+5)Weekly roundup
+6)Homepage_latest
+
+HSJI-814
+hotfix/HSJI-814-backup-migrate
+1) Compared the existing versions for any code change
+2) Verified in Available updates
+3) Database updates found:
+7204 -   Disable the NodeSquirrel module if it's installed.
+7205 -   Increase the length of all ids to 255.
+4) NodeSquirrel is not enabled in any evo sites
+5) Verfied with permissions which remained only for administrators
+6) NodeSquirrel is the cloud backup service built by the maintainers of Backup and Migrate which is added newly - this requires configurations to work
+7) Backup of the site was taken for testing purpose
+
+HSJI-815
+hotfix/HSJI-815-autosku
+1) Verified in Available updates
+2) Database updates found: Tokens replacement patterns
+3) Product type which has the settings, Automatically generate sku is disabled when compared with production settings
+4) On Enabling Automicatically generate sku, we can generate sku with the use of tokens
+5) No console or sb log errors found
+
+HSJI-813
+1) Issue with module update:
+a) New permissions was added, but was disabled for administrators
+b) Configuration settings needs to be saved for the back to top
+
+HSJI-840
+EVO: Module update - Link
+hotfix/HSJI-840-link
+1) Compared with previous versions for any code change
+2) Updated to new version link 7.x-1.5
+3) Database updates found for this module update as follows:
+The following updates are pending:
+link module : 7002 -   Removes unused link_extra_domains variable.
+4) Content types using the link field are Call-to-action button, Slideshow slide, Speaker, Sponsor, Venue
+5) Tested existing sponsor which is having the link, No issues found
+6) Settings for sponsor field settings remained same
+7) Added new content for sponsor and added title and url for it, working as expected
+8) No db errors logged for this update
+
+
+HSJI-823
+hotfix/HSJI-823-entity-prepopulate
+1) Updated to new version 7.x-1.7
+2) No database updates found for this version
+3) Verified in Available updates
+4) Verified in content types which has entity reference which has the entity prepopulate checkbox, which remains disbaled for all as before
+5) Checked for existing awards category page for reference, no ajax errors found 
+6) Created new awards category and added reference fields, no errors recorded
+7) No DB log errors
+
+HSJI-881
+hotfix/HSJI-881-facet-bonus
+1) Updated to new version 7.x-1.2
+2) No database updates found for this version
+3) Verified in Available updates
+4) No db log errors
+5) New configuration is added Reverse dependency which is disabled by default
+
+
+HSJI-882
+hotfix/HSJI-882-features-extra
+1) Updated to new version 7.x-1.0
+2) Verified in Available updates
+3) No database updates found for this version
+4) No db log errors
+5) Block FE & Nodequeues FE exists in features export
+6) Exported Block FE contents for testing without any hurdles
+
+HSJI-841
+hotfix/HSJI-841-market-ma
+1) Updated to new version 7.x-1.6
+2) Verfied in Available updates
+3) No database updates found
+4) Configurations in Market to MA remained same in Emerging
+5) Marketo Instance Host is the new configuration added for the update
+6) No console or DB log errors
+
+HSJI-837
+hotfix/HSJI-837-job-scheduler
+Update Steps:
+1) Updated to new version 7.x-2.0
+2) Verified in Available updates
+3) Database updates found for this stable version
+job_scheduler module :
+7102 - Drop field: created.
+4) Job scheduler is dependent module used by Feeds
+5) Used Imports to feed data for testing, without any issues
+
+HSJI-859
+hotfix/HSJI-859-token
+Update steps:
+1) Updated to new version 7.x-1.7
+2) Verified in Available updates
+3) No database updates found for this version update
+4) Added tokens in Account settings in Welcome emails using Browse available tokens
+5) Token was saved when selected site information without any issues
+6) No db log errors found after the process of testing
+
+HSJI-834
+hotfix/HSJI-834-imce
+Update steps:
+1) Updated to new version 7.x-1.11 
+2) Database updates required as follows:
+imce module :
+  7002 -   Fixes misconfigurations where anonymous user is given User-1 profile
+3) No database errors found
+4) After update found issue with icons missing in /imce (upload, delete, resize, crop icons missing)
+5) Created patch imce_icons_missing.patch for the above issue
+6) Remaining settings remained as same as before
+7) Uploaded a image using imce interface and resized, created thumbnails without any issues
+8) Above patch also fixed Back to top icon was visible in imce interface
+9) Created a content, uploaded a image using in image icon in ckeditor
+10) Back to top button visble in imce interface which is removed using the above patch
+
+
+HSJI-835
+hotfix/HSJI-835-imce-crop
+Update steps:
+1) Updated to new version 7.x-1.1
+2) No database updates found
+3) Cropped image in imce interface with no issues
+4) No database log enteries
+5) Created content using image crop
+
+
+HSJI-810
+hotfix/HSJI-810-addressfield
+Update steps:
+1) Compared with versions for any customizations for this module - No change done.
+2) Updated to new version to 7.x-1.2
+3) Database updates found as follows:
+addressfield module :
+  7001 -   Sets the value of the new "Default country" setting.
+4) No database errors found in reports
+5) Checked with payment flow in Awards & emerging site without issues
+
+
+HSJI-848
+hotfix/HSJI-848-panel-tabs
+Update Steps:
+1) Updated to recommended version 7.x-1.x-dev
+2) No database updates found
+3) No console or log errors after module update
+4) Verified with panels where the display settings can be selected as Tabs
+
+
+HSJI-847
+hotfix/HSJI-847-panels-cache
+1) Updated to new version 7.x-1.0
+2) Database updates found as follows:
+panels_hash_cache module :
+  7100 -   Clear the menu cache to pull in the new menu paths.
+  7101 -   Remove the old custom table so Panels' default cache table can be used.
+3) No recent log enteries found
+4) New configuration added in Panels cache to disable this panels cache for developement purpose
+5) Checked the payment page which is using panels without any console errors
+
+HSJI-855
+hotfix/HSJI-855-sharethis
+Update steps:
+1) Updated to new version 7.x-2.13
+2) No database updates found
+3) New configurations added in sharethis config
+4) Existing settings values remained same
+5) Checked with conference site which has social icons in the header region
+6) No console or db log errors found
+
+hotfix/HSJI-985-transliteration
+Update Steps:
+1) Updated to new version 7.x-3.2
+2) Database updates found: 
+transliteration module :
+7300 - Remove unnecessary Drupal 6 variables.
+3) No Error or warning messages found in Status report page
+4) No bugs found for transliterate in media->filesystem->transliteration
+
+
+HSJI-1007
+hotfix/HSJI-1007-mimemail
+Update steps:
+1) Compared the current version with evo mimemail module, no customizations written inside the module
+2) Updated to new version 7.x-1.1
+3) No database updates found
+4) Verified in Reports available page
+5) Verified in status page for any errors for mime mail module
+6) Permissions remained same after module update
+7) MIME mail configurations remained with same values
+8) Created new entry submission which uses mime mail module
+
+
+HSJI-1013
+hotfix/HSJI-1013-libraries
+1) Compared the current versions for any customizations done.
+2) Updated to new version 7.x-2.5
+3) Database updates found:
+libraries module :
+  7202 -   Grant the "View library reports" permission to roles with the "View site reports" permission.
+4) Verified admin/reports/libraries which logs uninstalled and unregistered libraries reports
+5) No errors found in console and reports error page
+6) Verified the status page for any error message related to libraries api
+7) No users can view "View library reports" other than adminsitrators as its enabled only for administrators
+8) Verified the site with no issues
+
+HSJI-1011
+hotfix/HSJI-1011-elysia-cron
+1) Compared previous versions for any customizations
+2) Updated to new version 7.x-2.6
+3) No database updates found on drush updb
+4) Verified in available page & Status report page
+5) No errors or notices found related to elysia cron after the update
+6) Settings with previous values remained same after the update
+7) Verified the site which functioned normally without any issues.
+
+
+HSJI-1009
+hotfix/HSJI-1009-better-exposed
+1) Compared previous versions
+2) Updated to new version 7.x-3.6
+3) No database updates found
+4) Checked in available updates, for console errors
+5) Verified the link which used the better exposed filters
+admin/commerce/customer-profiles/list
+6) No ajax errors found for the exposed filters
+
+
+HSJI-1014
+hotfix/HSJI-1014-mail-system
+1) Compared the previous versions for any custom code or patch
+2) Updated to new version 7.x-2.35
+3) No database updates on drush updb
+4) Checked in available updates, reports page
+5) No new configurations seen in admin/config/system/mailsystem
+6) Created a order and verified the email structure which remained same in emerging site
+7) Recieved email and checked in maillog
+8) No errors found across the site
+
+
+HSJI-1016
+hotfix/HSJI-1016-xml
+1) Compared the versions for custom code check
+2) Updated to new version 7.x-2.6
+3) No database updates found
+4) Checked in available updates, reports page
+5) No new settings added seen after the module update, also config values remained same.
+6) Navigated to sitemap.xml url for complete lists of urls
+7) Did a search which used basic search api and worked without any issues for this below site.
+http://regionalnetworks.hsj.co.uk/sitemap.xml
+
+HSJI-1012
+hotfix/HSJI-1012-googletag
+1) Compared versions for custom code
+2) Updated to new version 7.x-1.4
+3) No database updates found
+4) Checked in available updates, reports page
+5) Settings for google tag manager remained same
+admin/config/system/google_tag
+6) Checked the container id in View source for analytics tracking
+
+HSJI-1010
+hotfix/HSJI-1010-display-suite
+1) Compared the versions for custom code.
+2) No patches added for display suite
+3) Updated to new version 7.x-2.16
+4) No database updates found
+5) No new settings added in admin/structure/ds 
+6) Verified the structure of few content types which remains same after upgrade
+7) Verified order page layout after the upgrade
+8) No console or db log errors found
+
+HSJI-1038
+hotfix/HSJI-1038-context
+1) Compared the older versions
+2) No patches added for context module
+3) Updated to new version 7.x-3.9
+4) No Database updates found
+5) Verified in available updates, reports status page.
+6) No db log errors found
+7) Unable to view admin/structure/context as the context UI is disabled by before and after upgrade
+8) Tested the site
+
+HSJI-1053
+hotfix/HSJI-1053-menu-block
+1) Compared the files, where extra file menu-block-admin.css is added in the existing version but not used anywhere in the code
+2) No patches added for existing menu block module
+3) Upgraded to new version 7.x-2.8
+4) No database updates found
+5) Verified in available updates, no warnings listed in status page
+6) No menu block created for value and emerging site
+7) Tested the site for any menu issues
+
+HSJI-1058
+hotfix/HSJI-1058-email-register
+1) Compared previous versions for custom code
+2) No patches added for this version
+3) No database updates found
+4) Registered successfully using email address in value awards site with email confirmation
+5) No console or db log errors
+
+
+honeypot module :
+  7004 -   Create Honeypot CSS file.
+  7100 -   Adds the 'hostname' column to the {honeypot_user} table.
+  7101 -   Transfer previous honeypot trigger info from {flood} to {honeypot_user}.
+
+HSJI-1063
+hotfix/HSJI-1063-node-export
+1) All the files and folders were identical with previous versions
+2) No patches added for the current version of node export
+3) Verified in available updates and Reports page
+4) Drush updates found as follows:
+node_export module :
+  7304 -   Remove and rename vars.
+5) Node export disabled for all content types as verified in admin/config/content/node_export
+6) Enabled for Basic content type and verified node export works successfully using Node export:import
+
+HSJI-1066
+hotfix/HSJI-1066-profile
+1) Files comparison and no additional patches added for the current version
+2) Upgraded and verified in Available updates, Reports page
+3) Database updates found:
+profile2 module :
+  7103 -   Remove duplicate profile records in batches of 50.
+  7104 -   The combination of profile type and uid should be unique.
+4) Navigated to Structure->Profile Types-> Entrant -> Manage fields , added new field for profile test
+5) Field was created and was displayed in Entrant My profile tab
+
+HSJI-1103
+hotfix/HSJI-1103-chaos-tools
+1) Updated to new version to 7.x-1.15
+2) Verified in available updates, Reports page
+3) No database updates found
+4) Verified the site
+5) Checked the entry and payment checkout workflow
+
+
+
+EVO ADMIN DETAILS:
+shelley.davis@wilmingtonplc.com
+93f7D32PHdGB
+
+EVO SITES
+value.hsj.co.uk
+awards.hsj.co.uk - issue
+awards.patientsafetycongress.co.uk
+cancerforum.hsj.co.uk
+commissioningsummit.hsj.co.uk  - redirecting
+digitaltransformation.hsj.co.uk
+emergingleaders.hsj.co.uk
+hsjsummit.hsj.co.uk
+integratedcare.hsj.co.uk
+lifesciences.hsj.co.uk
+mentalhealth.hsj.co.uk
+modernisinghealthcare.hsj.co.uk
+partnership.hsj.co.uk
+partnershipforum.hsj.co.uk
+patientsafetycongress.co.uk
+provider.hsj.co.uk
+rapidresponse2018.com
+regionalnetworks.hsj.co.uk
+strategicestates.hsj.co.uk
+transformingmentalhealth.hsj.co.uk
+https://conferences.int-comp.org/
+https://psl-london.com/
+https://excellenceinlegacyadmin.co.uk/
+
+
+Paid assets
+- features
+- panels
+- roles
+- content type
+- field collections
+
+Configurations:
+1) Create product type
+2) Manage display of field collections to fuild column
+3) Alter view for product display filter to paid assets
+4) Add css to appearance
+.page-payment-payment-confirmation #webform-client-form-78 .webform-component--ve-interactive-pixel{
+display:none
+}
+5) add permissions for the paid contents & view paid products
+
+Counter clock
+- counter clock with date popup
+- color
+- background color
+- seconds, hours, mins, day
+- header,footer,overlay -display style
+a) full
+b) only mins
+c) only hours
+- size
+large, medium, small, 
+custom(width & height)
+- display counter variable near the logo
+
+
+- display only days
+- use jquery for position for clock timer
+- remove the clock in mobile
+
+
+Word count:
+- https://stackoverflow.com/questions/11044365/display-word-count-while-user-is-typing-message-and-limit-the-word-length-to-300
+- https://github.com/twomice/maxlength_webform/blob/master/maxlength_webform.module
+- https://www.drupal.org/node/1459650#comment-5699952
+- https://www.drupal.org/project/webform/issues/679288
+- https://www.drupal.org/node/908600
+- https://www.drupal.org/node/908596
+
+- Create content type 'Contact Contents'
+a) fields should be Title(h2), Contact Title, Telephone No, Email
+- Create configuration page
+a) Display Contact block
+b) Enter Title
+c) Title heading
+d) Button label
+e) Button background color(set default color)
+f) Button background hover color(set default color)
+g) Button Font color & Font hover color
+
+- create feature for content type, view, permissions
+- variable_set colors in hook_update
+
+
+Paid asset details:
+Subject for New Paid Contents
+Account details for [paiduser:name] at [site:name]
+
+Welcome Message for Paid contents
+[paiduser:name],
+Thank you for registering at [site:name]. You may now log in by clicking this link or copying and pasting it to your browser:
+[paiduser:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [paiduser:name]
+password: Your password
+
+You can view your product details using the link below:
+https://cogqa-excellenceinlegacyadmin.co.uk/paid-asset-3
+
+
+--  [site:name] team
+
+Subject for Existing Paid Contents
+Paid Assets Details
+
+Message Body for Existing Paid contents
+Hi [paiduser:name],
+Welcome Back!! Please Log in with your username and password.
+
+You can view your product details using the link below:
+https://cogqa-excellenceinlegacyadmin.co.uk/paid-asset-3
+
+--  [site:name] team
+
+
+https://excellenceinlegacyadmin.co.uk/paid-asset-content-url<br /><br />
+
+
+Slot allocations:
+Slot allocations:
+1) Have category - content reference to product
+2) Slot->rooms->sessions
+3) Either add quantity or no of members in session or product
+4) Quantity of the slots - textfield which needs to be added to products or sessions content type
+5) Keep check, if anyone tries to select sessions which the slot is over (grey out) or alert saying select another slot or (remove product from cart)
+6) email settings to add session and slot information
+urls:
+https://staging-conferences.int-comp.org/admin/config/i2i/delegate-mail-settings/user
+https://staging-conferences.int-comp.org/agenda
+https://staging-conferences.int-comp.org/node/2018/edit?destination=sessions
+https://staging-conferences.int-comp.org/node/1774/webform
+https://staging-conferences.int-comp.org/sessions#icon
+https://staging-conferences.int-comp.org/payment/add-delegates
+
+Queries:
+1) Should the product be linked with streams(taxonomy) or sessions
+2) If product linked with session, then we will show single room with slots(with quantity)
+3) If the product is linked with streams then we will show multiple rooms linked with slot
+4) If the product is linked with streams, can we choose multiple streams for product
+5) If the product quantity is greater than 1, how should this be handled.
+
+
+
+
+
+
+
+

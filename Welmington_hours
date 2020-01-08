@@ -1,0 +1,145 @@
+Welmington hours:
+
+24th Aug
+WDAOS-1652 - 1 hr
+WDAOS-1556 - 2 hr
+WDAOS-1452 - 4 hr
+WDAOS-1729 - 1 hr
+
+25th Aug
+WDAOS-1652 - 1 hr
+WDAOS-1705 - 1.5 hr
+WDAOS-1452 - 4 hr
+WDAOS-1729 - 1.5 hr
+
+28th Aug
+WDAOS-1729 - 8 hr
+
+29th Aug
+WDAOS-1729 - 8 hr
+
+30th Aug
+WDAOS-1729 - 8 hr
+
+31st Aug
+Production search issue - 8 hr
+
+1st Sept
+WDAOS-1729 - 8 hr
+
+4th Sept
+WDAOS-1729 - 6 hr
+WDAOS-1781 - 2 hr
+
+5th Sept
+WDAOS-1729 - 8 hr
+
+6th Sept
+WDAOS-1729 - 4 hr
+WDAOS-1784 - 8 hr
+
+7th Sept
+WDAOS-1469 - 1 hr
+WDAOS-1452 - 1 hr
+WDAOS-1729 - 2 hr
+WDAOS-1552 - 4 hr
+
+8th Sept
+Holiday
+
+11th Sept
+WDAOS-1729 - 2hr
+WDAOS-1469 - 6hr
+
+12th Sept
+WDAOS-1469 - 6hr
+WDAOS-1444 - 2hr
+
+13th Sept
+WDAOS-1552 - 8hr
+
+14th sept
+WDAOS-1469 - 8hr
+
+15th sept
+WDAOS-1469 - 8hr
+
+25th Sept
+WDAOS-1839 - 8hr
+
+26th Sept
+WDAOS-1839 - 8hr
+
+27th Sept
+WDAOS-1839 - 8hr
+
+28th Sept
+WDAOS-1839 - 8hr
+
+3th Oct - 12th Oct
+WDAOS-1839 - 8hr
+
+Phase2:
+13th Oct
+WDAOS-1840 - 8hr
+
+16th Oct
+WDAOS-1840 - 8hr
+
+17th Oct
+WDAOS-1840 - 8hr
+
+18th Oct
+WDAOS-1840 - 8hr
+
+23rd Oct
+WDAOS-1552 - 2 hr
+WDAOS-1840 - 6hr
+
+24th Oct
+WDAOS-1840 - 8hr
+
+25th Oct
+WDAOS-1840 - 8hr
+
+26th Oct
+WDAOS-1840 - 8hr
+
+27th Oct
+WDAOS-1840 - 8hr
+
+30th Oct
+WDAOS-1840 - 8hr
+
+31st Oct
+WDAOS-1839 - 8hr
+
+
+https://staging.complianceweek.com/user/register?type=full#.Wt7wuxuFPIX
+
+
+
+Percentage coupon
+- Awards : inactive coupons when applied not getting added, and not showing any message
+- Emerging: inactive coupons when applied not getting added, and not showing any message
+
+Product coupon
+- Awards : inactive coupons getting added in checkout without any error message
+(fixed & percentage)
+- Emerging: inactive coupons when applied not getting added, and not showing any message
+
+
+TOP BAR
+Main tpl used across the site:
+i2i_eventsone_fw.info
+i2i-eventsone-fw-site-template-fww.tpl.php
+i2i_custom (module)
+sites/all/modules/custom/i2i_custom/templates/top-bar-contents.tpl.php
+sites/all/themes/i2i_eventsone_fw/color/color.inc
+sites/all/themes/i2i_eventsone_fw/theme-settings.php
+sites/all/themes/i2i_eventsone_fw/scripts/i2i_eventsone_fw.js
+sites/all/themes/i2i_eventsone_fw/template.php
+
+
+
+

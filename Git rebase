@@ -1,0 +1,259 @@
+Git rebase 
+
+git checkout master
+git pull
+git checkout feature/to-be-deployed
+git rebase master
+*no need to do the below steps if you do not see any rebate messages or already same
+git push --force origin feature/to-be-deployed
+
+incase the same branch is checked out  by others then intimate them that you have done rebase on this branch and others has to do the below steps
+git checkout master
+git pull
+git branch -d feature/to-be-deployed - delete your local branhc - you will loose all the changes - so backup before this
+git checkout feature/to-be-deployed - checkout freh copy from repo -compare the code with back up and repply the changes
+
+
+Git Delete branch
+- Delete locally
+git branch -D backtop_patch
+- Delete remotely
+git push origin --delete backtop_patch
+
+
+Feature update:
+1) Check all changes in features and download feature
+2) Commit feature module
+3) Click on feature title and revert components if it revert components exists
+4) Write update hook
+function i2i_common_update_7665() {
+	if (module_exists('i2i_responsive_grid')) {
+	  features_revert_module('i2i_evo_responsive_grid');
+	}
+}
+
+
+GIT Remove untracked files:
+git add --all
+git reset --hard HEAD
+
+GIT REBASE:
+GIT LOCAL:
+- git checkout master
+- git pull
+- git checkout feature/haplo-amends-v3
+- git pull origin feature/haplo-amends-v3
+- git rebase master
+- git push --force origin feature/haplo-amends-v3
+GIT SERVER:
+- git fetch && git checkout feature/haplo-amends-v3
+- git pull
+- merge message(ctrl x n no)
+- git checkout master
+- git pull
+- git branch -D feature/haplo-amends-v3
+- git checkout feature/haplo-amends-v3
+- git pull
+
+https://github.com/WilmingtonGroup/ComplianceWeek/commits/feature/haplo-amends-v3-compare
+https://github.com/WilmingtonGroup/hsji/compare/testing
+
+git branch -D feature/haplo-amends-v3 
+git checkout feature/haplo-amends-v3 
+git pull
+
+
+
+
+Module updates:
+file entity
+- Updated the version to 7.x-2.16
+- No database update found
+- No db log errors related to the module
+- Add file types and fields and deleted with no errors
+- uploaded media file for testing
+
+Media youtube
+- Updated the version to 7.x-3.7
+- No database update found
+- DB log errors related not found
+- Added youtube video using the media icon in ckeditor
+- New Youtube videos were added without any errors
+- Existing youtube videos also added for testing
+
+Honeypot
+- Updated to new version 7.x-1.24
+- No database update required
+- Honeypot configurations remained same before & update
+- Honeypot enabled for user forms & registration forms which remained same
+- New version update was php 5.3(lesser), our php version is 5.6
+- Also checked with registration forms which created without any errors
+
+WDAOS-2213
+element.style {
+    float: right;
+    width: 65%;
+    margin-top: -190px;
+}
+
+
+WDAOS-2435
+CW: Module update - Rules 
+-feature/WDAOS-2435
+Module update steps:
+1) Updated to version Rules 7.x-2.11
+2) No database updates found
+3) No errors related to rules in console and recent log entries
+4) Created new rule for testing: After saving new content, redirect to homepage
+5) On saving new content, page got redirected to homepage, but when the same content was saved again, it redirected to content page.
+6) Deleted the above rule without any errors
+7) Also checked with existing rules where the configurations remained same
+
+WDAOS-2434
+CW: Module update - Link 
+-feature/WDAOS-2434
+Module update steps:
+1) Updated to new version Link 7.x-1.5
+2) Found database update & updated without errors
+link module
+7002 - Removes unused link_extra_domains variable.
+3) No errors related to rules in console and recent log entries
+4) Created link field in Basic page for testing
+5) Added Testing content page, with link field content to it
+6) Link field is displayed (Tried with Unlimited values of Link field)
+7) Deleted the link field without any errors
+8) Checked with existing link fields in Article, Blog post, Event, Homepage, Webcast. The configurations for the existing content types remained same
+
+WDAOS-2436
+CW: Module update - VBO 
+-feature/WDAOS-2436
+1) Updated to new version Views Bulk Operations (VBO) 7.x-3.5
+2) No database updates found
+3) No db log errors & console errors found
+4) Settings for CW Administration: Nodes & CW Administration: Files remained same
+5) Unpublished group of nodes for testing in View Node list page - successfully changed
+
+
+WDAOS-2431
+CW: Module update - Devel
+feature/WDAOS-2431-devel
+1) Updated to new version 	7.x-1.6
+2) Database updates found
+7007 - Delete 'devel_xhprof_' variables as they were removed from code.
+7008 - Change variable "dev_timer" to "devel_timer".
+3) No DB log errors or console errors
+4) Verified with Settings for Devel, remained same before and after update
+5) Devel is Developer helper module, checked for dpm & dprint_r functions in the code to verfiy.
+
+WDAOS-2433
+CW: Module update - ImageCache Actions
+feature/WDAOS-2433
+1) Updated to new version 	7.x-1.9
+2) No database updates found
+3) No DB log errors or console errors
+4) Added Image style & effects - no new addition of image styles added in this version
+5) Configurations for existing styles remained same.
+6) Add New image style with Scale and Crop
+
+WDAOS-2432
+CW: Module update - EU Cookie Compliance
+feature/WDAOS-2432
+1) Updated to new version 7.x-1.23
+2) Database update found with this message:
+eu_cookie_compliance module
+7003 - Clear cache for only the settings of this module, to initialize new module settings.
+7004 - Version 1.21. Clear cache for only the settings of this module.
+3) No DB log errors or console errors
+4) New settings after the version was installed
+5) Enable banner similar to Enable popup
+6) Permissions available in settings page,Enabled only for administrators
+7) In Appearance, the position of the popup was in top by default(which should be changed to bottom when this module is installed in production)
+8) EU countries is added - this requires geoip & smart_ip module to work - this can be ignored for CW
+9) Other settings & messages remained same.
+10) When we 'Enable banner' we see the popup with message configured
+
+WDAOS-2429
+CW: Module update - Address field tokens
+feature/WDAOS-2429
+1) Updated to new version 7.x-1.11
+2) No database updates found
+3) New version : no new patches is added in the code
+4) Db log & console errors was related to this module was not found
+5) Address configurations remained same
+https://staging.complianceweek.com/admin/config/regional/address
+6) Checked with register pages& events page
+
+
+WDAOS-2552
+CW: Drupal module add - schema.org
+feature/WDAOS-2552
+Testing steps:
+1) Added new module schema metatag module of version 7.x-1.2
+2) Enabled the module, verified in Status reports
+3) Verfied for any console errors & db log errors.
+4) Schema metatag module is extends functionality of the metatag module used for seo purpose
+5) Currently this only the recommended module for metatag, we have added the above said module
+6) This JSON-LD can be tested using this url
+https://search.google.com/structured-data/testing-tool
+
+Other urls:
+https://developers.google.com/search/docs/guides/intro-structured-data
+https://www.lullabot.com/articles/create-seo-juice-by-adding-json-ld-structured-data-to-drupal-8
+https://schema.org/Article
+
+
+
+
+
+WDAOS-2549
+CW: Drupal module update - Organic groups
+feature/WDAOS-2549
+1) Updated to new version 7.x-2.10
+2) No database updates found
+3) No Errors found in console and in db log errors related to this module
+4) 
+
+
+
+
+
+
+
+Please push this branch to staging: feature/WDAOS-2082-db-logs-v1
+
+Please check and confirm for production move.
+
+
+Mailchimp:
+content alerts module
+cw light registration
+cw user alerts
+og seat limit
+cw feedback to author
+cw my cw rr mailshot
+cw registration
+wm organization
+htmlmail--cw_my_cw_rr_mailshot.tpl.php
+
+
+1. First check you are able to sent email eg:- for forgot password through mail chimp
+2. Then we can show that this the example, and rest of them we can do easily
+3. While showing the example we can say that it is not mobile friendly, do we need to continue or not
+
+
+4 byte UTF-8 for mysql is not activated, but it is supported on your system. It is recommended that you enable this to allow 4-byte UTF-8 input such as emojis, Asian symbols and    [warning]
+mathematical symbols to be stored correctly. See the documentation on adding 4 byte UTF-8 support for more information. (Currently using Database 4 byte UTF-8 support Not enabled)
+The following module is missing from the file system: <em class="placeholder">i2i_custom</em>. For information about how to fix this, see <a                                         [warning]
+href="https://www.drupal.org/node/2487215">the documentation page</a>. bootstrap.inc:1143
+PHP Fatal error:  Cannot access empty property in /srv/web/eventsone/docroot/sites/all/modules/contrib/weight/weight.install on line 102
+
+Fatal error: Cannot access empty property in /srv/web/eventsone/docroot/sites/all/modules/contrib/weight/weight.install on line 102
+Drush command terminated abnormally due to an unrecoverable error.                                                                                                                   [error]
+Error: Cannot access empty property in /srv/web/eventsone/docroot/sites/all/modules/contrib/weight/weight.install, line 102
+The external command could not be executed due to an application error.                                                                                                              [error]
+
+
+SQLSTATE[42000]: Syntax error or access violation: 1173 This table type requires a primary key
+
+
+
