@@ -1,0 +1,125 @@
+Drupal 8 issues
+1.Installation issues
+- on installation getting error on xdebug
+add the following line at the end of xdebug in php.ini
+xdebug.max_nesting_level = 256
+- increase the maximum execution time to 500
+- enable the mod rewrite in php.ini and restart the apache.
+
+OOPS link
+https://www.codecademy.com/courses/web-beginner-en-bH5s3/0/1#
+
+Coding issues
+- classname should be same as filename
+
+Drupal 8 API
+https://www.drupal.org/developing/api/8/block_api
+
+Drupal 8 tasks
+1.Created custom module
+issues:
+- class name should be same as filename
+
+2. created custom block
+issues:
+- block id should be included in comments section
+- $form_state->getValue('firstname') to be used, and not $config->getValue('firstname')
+- getConfiguration 
+
+
+Drupal 8 theme integration:
+- Overview of yaml :
+http://symfony.com/doc/current/components/yaml/yaml_format.html
+
+Modules and themes removed from core in Drupal 8
+https://www.drupal.org/node/2116417
+https://www.drupal.org/search/site/poll?f%5B0%5D=im_vid_44%3A13028&f%5B1%5D=&f%5B2%5D=&f%5B3%5D=drupal_core%3A7234&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=ss_meta_type%3Amodule&solrsort=iss_project_release_usage+desc
+
+Twig Template naming conventions
+https://www.drupal.org/node/2354645
+
+
+Drupal 8 tasks
+- alter overview admin page - done
+- add the poll module and alter it - poll module not working
+- integration with facebook and twitter
+- List of latest news using views and theming the style - done. but theming the particular field is left
+- Creation of form with data storing in database - done
+http://valuebound.com/resources/blog/how-to-send-mail-programmatically-drupal-8
+Form details:
+firstname,lastname,email,message,checkbox('accept the terms and conditions box')
+
+- workflow in drupal 8 - check it - gives error
+- drush - create custom commands for drupal 8
+https://getcomposer.org/download/
+
+- create breadcrumbs - Not done
+>set the breadcrumb for article
+>set the breadcrumb for the view
+>set the breadcrumb for custom form
+
+- Create custom blocks and render the block output in twig file
+- Theming in drupal 8
+> Integrating theme
+> Theme a page
+> Theming a block
+> Theming contact form
+
+- email functionality for the form
+- block and views on install the module.
+- Custom module on home page customization, which includes banner, mostly read news
+using views, create products content type, show the tagged product on the right side.
+- Customization of the user registerform by adding new field and storing in the database.
+-debug of drupal 8
+-custom tokens 
+
+
+
+Drupal 8 2nd tasks:
+- Create the homepage banner - done
+- Create the views block on installation 
+- Create the email functionality in drupal 8  - Done
+- Modify the user register form in drupal 8 by adding capatcha to it.
+- Panels in drupal 8
+- Display suite in drupal 8
+- Add the block & view to the twig file.  - Done
+- Create a calender & Contact forms  in drupal 8 - done
+- Comments and multilingual in drupal 8  - done
+- Display modes in structures 
+- Configuration synchronization uses
+- Log messages in drupal 8 - Done
+- Dependency Injection in drupal use
+- change the admin password
+- create a patch in drupal 7 or drupal 8
+- install drush and try to enable drush alias for multiple sites
+
+Drupal 8 new task
+- create the form programmtically
+- store the form details in database
+- display the form details in admin page with edit, delete option for the admin
+- for the logged in users, add the particular form details to be shown in the admin page, with their form details with edit and delete option
+
+Drupal 8 API
+https://www.drupal.org/docs/8/api
+
+
+Drupal 8 pre-knowledge:
+https://www.drupal.org/getting-started-d8-bkg-prereq
+Plugin API - https://www.drupal.org/node/2087839
+https://buildamodule.com/video/upgrading-to-drupal-8-content-type-management-how-form-modes-work-in-drupal-8-and-how-to-add-and-edit-them
+
+PHP OOPS Basics:
+http://www.phptherightway.com/
+http://www.phpfreaks.com/tutorial/oo-php-part-1-oop-in-full-effect
+https://www.codecademy.com/en/courses/web-beginner-en-ZQQ64/0/1?curriculum_id=5124ef4c78d510dd89003eb8
+http://www.phptherightway.com/pages/Design-Patterns.html
+http://php.net/lsb
+
+support@tapankapri.com
+
+
+
+ 
+
+
+

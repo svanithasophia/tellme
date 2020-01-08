@@ -1,0 +1,16 @@
+Drupal 7 imp
+
+Creating the custom filter in views
+- https://api.drupal.org/api/views/views.api.php/function/hook_views_data/7.x-3.x
+- http://www.metaltoad.com/blog/drupal-7-tutorial-creating-custom-filters-views
+
+
+
+Web services:
+web services : a software system designed to support interoperable machine - to machine interaction over a netwrork
+API - application programmer interface
+apis speacify how software components should interact with one and another.
+Services module : Services modules allows drupal to expose its data and internal actions to other applications via the web services api
+Requests and Responses : Drupal gets the requests from the external services and send the response through the api. The requested is iniated using rest or xmlrpc.
+Drupal 's data & actions : data can be nodes, users, comments, views etc. actions can be authenticate a user, create a node, trigger password and reset email.
+
